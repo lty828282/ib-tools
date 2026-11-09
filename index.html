@@ -144,6 +144,7 @@
   .card .meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px;font-size:12px;color:#B0927E}
   .card .meta span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .card .meta{flex-wrap:nowrap!important}
+  .card .grade-tag{flex:none;font-family:"Jua";font-size:12.5px;line-height:1;color:#fff;background:var(--gc);border-radius:999px;padding:4px 9px 3px;box-shadow:0 2px 0 rgba(0,0,0,.08)}
   .card .tag{background:var(--s);color:var(--c);border-radius:8px;padding:2px 8px;font-family:"Jua";font-size:12px}
   .card .go{flex:none;align-self:center;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
     background:var(--s);color:var(--c);transition:transform .2s}
@@ -370,7 +371,7 @@ function card(t, gr, i){
   return `<a class="card" href="${t.url}" target="_blank" rel="noopener" style="${style}">
     <div class="ic">${ico(t.icon)}</div>
     <div class="body"><h3>${esc(t.name)}</h3>${descHTML(t.desc)}
-      <div class="meta">${t.home?'<span class="tag">홈페이지</span>':''}<span>${host(t.url)}</span></div></div>
+      <div class="meta"><span class="grade-tag" style="--gc:var(--g${t.g});--gs:var(--g${t.g}s)">${t.g}학년</span><span>${host(t.url)}</span></div></div>
     <div class="go">${ico('arrow')}</div></a>`;
 }
 
